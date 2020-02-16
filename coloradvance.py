@@ -23,8 +23,8 @@ def main():
     for i in range(1, c + 1):
         gui(i)
         graph = randomG.createGraph(p, n)
-        sum1 = sum1 + key(graph)
-        sum2 = sum2 + keyQ5(graph)
+        sum1 = sum1 + welshPowellGraphColoring(graph)
+        sum2 = sum2 + greedyAlgorithm(graph)
         maxDegree = 0
         for i, j in graph.items():
             maxDegree = max(maxDegree, len(j))
@@ -43,7 +43,7 @@ def getSortedV(graph):
     for i in temp2:
         result.append(i[0])
     return result
-def key(graph):
+def welshPowellGraphColoring(graph):
     allV = list(range(1,n+1))
     rank = getSortedV(graph)
     colored = {}
@@ -70,7 +70,7 @@ def sameGraph():
     print("advance algorithm: " + str(key()))
     print("greedy algorithm from Q5: " + str(color.key))
 
-def keyQ5(graph):
+def greedyAlgorithm(graph):
     colorlist = [0]
     colored = {}
     for U, neighbors in graph.items():

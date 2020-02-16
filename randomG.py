@@ -1,6 +1,7 @@
 import random
-
-
+# this return a graph
+# p is the chance of a edge exist between two vertices
+# n is the size of the graph, number of vertices
 def createGraph(p = 0.02, n = 1000):
     result = []
     for i in range(1, n):
